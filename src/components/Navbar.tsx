@@ -5,6 +5,7 @@ import { pingApi } from "@/hooks/useApi";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ export default function Navbar() {
           </div>
           <Button type="submit" variant="secondary">Search</Button>
         </form>
+        <ThemeToggle />
         <div className="ml-2 flex items-center gap-2" aria-live="polite" aria-atomic>
           {online ? <Wifi className="h-4 w-4 text-primary" /> : <WifiOff className="h-4 w-4 text-destructive" />}
           <span className="text-sm text-muted-foreground">{apiOnline ? "API" : "API offline"}</span>
